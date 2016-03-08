@@ -1,0 +1,53 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+    - var nameText=title;
+    //a(
+    //class='button',
+    //href='/users'
+    //) +
+    br
+    form(name='form1', method='POST', action='/analyze')
+        //input(name='_method', value='PUT', type='hidden')
+        //input(
+        //  type='checkbox'
+        //  name='checkbox'
+        //  checked
+        //)
+        //textarea(
+        //    name='textarea1'
+        //    value= content2
+        //    cols = "100"
+        //    rows="20"
+        //)
+        p   Text
+        p   #{text1}
+        //input(
+        //  type='input'
+        //  name='nameText'
+        //  value= nameText
+        //)
+        br
+        //button(
+        //type='submit'
+        //title='OK'
+        //) OK
+        //each item in pContent
+        //    li= item
+        table
+            thead
+                td(style='width: '+(75)+'%')
+                    p KEYWORDS FROM DICT (#{pKeysOrig.length})
+                td
+                    p BASIC STEMS OF KEYWORDS (#{pKeys.length}):
+            tr
+                td(style='width: '+(75)+'%')
+                    each item in pKeysOrig
+                        li= item
+                td
+                    each item in pKeys
+                        li= item
+        //p   Tokens
+        //p   #{pContent}
