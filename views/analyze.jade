@@ -29,6 +29,13 @@ block content
         //  name='nameText'
         //  value= nameText
         //)
+        p   TokenizedText (tokens: #{tokenText1.length})
+        p   #{tokenText1.join(", ")}
+        //input(
+        //  type='input'
+        //  name='nameText'
+        //  value= nameText
+        //)
         br
         //button(
         //type='submit'
@@ -47,7 +54,9 @@ block content
                     each item in pKeysOrig
                         li= item
                 td
-                    each item in pKeys
-                        li= item
+                    //each item in pKeys
+                    //    li= item
+                    each item in pKeysAndFreq
+                        li= item[0]+' ('+item[1]+')'
         //p   Tokens
         //p   #{pContent}
