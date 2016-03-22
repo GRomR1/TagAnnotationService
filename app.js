@@ -4,7 +4,7 @@ var path = require('path');
 //var logger = require('morgan');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
-//var users = require('./routes/users');
+var upload = require('./routes/upload');
 var analyze = require('./routes/analyze');
 
 var app = express();
@@ -12,6 +12,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+//express.bodyParser({ uploadDir: 'upload' });
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -33,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //});
 
 app.use('/', routes);
-//app.use('/users', users);
+app.use('/upload', upload);
 app.use('/analyze', analyze);
 
 // catch 404 and forward to error handler
