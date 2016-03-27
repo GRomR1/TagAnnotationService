@@ -1943,6 +1943,7 @@ CP-67
 CP/CMS
 CP/M
 CPM 
+CPU
 CPU-bound process
 CR3
 Cracker

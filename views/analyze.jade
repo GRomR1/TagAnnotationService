@@ -46,8 +46,6 @@ block content
             thead
                 td(style='width: '+(75)+'%')
                     p KEYWORDS FROM DICT (#{pKeysOrigAndFreq.length})
-                td
-                    p BASIC STEMS OF KEYWORDS (#{pKeysAndFreq2.length}):
             tr
                 td(style='width: '+(75)+'%' )
                     //each item in pKeysOrig
@@ -56,10 +54,8 @@ block content
                     //        li= index + ' (' + val +')'
                     each item in pKeysOrigAndFreq
                         li= item[0] + ' (' + item[1] + ')'
-                td
+                //td
                     //each item in pKeys
                         li= item
-                    each item in pKeysAndFreq2
-                        li= item[0]+' ('+item[1]+')'
         //p   Tokens
         //p   #{pContent}
