@@ -61,7 +61,8 @@ router.post('/', function(req, res){
             fs.readFile( uploadFile.path, 'utf8', function(err, data) {
                 if (err)
                     throw err;
-                external.parseFile(data, res, uploadFile.path);
+                external.parseTextData(data, res);
+                console.log('success finish: '+ uploadFile.path);
             });
         }
         else {
