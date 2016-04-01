@@ -2,60 +2,24 @@ extends layout
 
 block content
     h1= title
-    - var nameText=title;
-    //a(
-    //class='button',
-    //href='/users'
-    //) +
-    br
+    hr
+    p
+        a(class='button', href='/choose_method') Назад
+    - var text1Var='A central processing unit (CPU) is the electronic circuitry within a computer that carries out the instructions of a computer program by performing the basic arithmetic, logical, control and input/output (I/O) operations specified by the instructions. The term has been used in the computer industry at least since the early 1960s.[1] Traditionally, the term "CPU" refers to a processor, more specifically to its processing unit and control unit (CU), distinguishing these core elements of a computer from external components such as main memory and I/O circuitry.[2] The form, design and implementation of CPUs have changed over the course of their history, but their fundamental operation remains almost unchanged. Principal components of a CPU include the arithmetic logic unit (ALU) that performs arithmetic and logic operations, processor registers that supply operands to the ALU and store the results of ALU operations, and a control unit that fetches instructions from memory and "executes" them by directing the coordinated operations of the ALU, registers and other components. Most modern CPUs are microprocessors, meaning they are contained on a single integrated circuit (IC) chip. An IC that contains a CPU may also contain memory, peripheral interfaces, and other components of a computer; such integrated devices are variously called microcontrollers or systems on a chip (SoC). Some computers employ a multi-core processor, which is a single chip containing two or more CPUs called "cores"; in that context, single chips are sometimes referred to as "sockets".[3] Array processors or vector processors have multiple processors that operate in parallel, with no unit considered central.';
     form(name='form1', method='POST', action='/analyze')
-        //input(name='_method', value='PUT', type='hidden')
-        //input(
-        //  type='checkbox'
-        //  name='checkbox'
-        //  checked
-        //)
-        //textarea(
-        //    name='textarea1'
-        //    value= content2
-        //    cols = "100"
-        //    rows="20"
-        //)
-        p   Text
-        p   #{text1}
-        //input(
-        //  type='input'
-        //  name='nameText'
-        //  value= nameText
-        //)
-        p   TokenizedText (tokens: #{tokenText1.length})
-        p   #{tokenText1.join(", ")}
-        //input(
-        //  type='input'
-        //  name='nameText'
-        //  value= nameText
-        //)
+        p Выберите словарь:
+            select(name='selectDictName')
+                each dict in dictNames
+                    option(value='#{dict}') #{dict}
+        p Введите текст:
+        textarea(
+        name='textarea1'
+        cols="100"
+        rows="20"
+        ) #{text1Var}
         br
-        //button(
-        //type='submit'
-        //title='OK'
-        //) OK
-        //each item in pContent
-        //    li= item
-        table
-            thead
-                td(style='width: '+(75)+'%')
-                    p KEYWORDS FROM DICT (#{pKeysOrigAndFreq.length})
-            tr
-                td(style='width: '+(75)+'%' )
-                    //each item in pKeysOrig
-                    //    li= item
-                    //each val, index in pKeysOrigAndFreq
-                    //        li= index + ' (' + val +')'
-                    each item in pKeysOrigAndFreq
-                        li= item[0] + ' (' + item[1] + ')'
-                //td
-                    //each item in pKeys
-                        li= item
-        //p   Tokens
-        //p   #{pContent}
+        button(
+        type='submit'
+        title='OK'
+        ) OK
+    p Всего словарей в системе - #{dictNames.length}

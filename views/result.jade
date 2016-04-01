@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1= title
+    hr
+    p
+        a(class='button', href='/') Назад
+    //p   Text
+    p   #{text1}
+    //p   TokenizedText (tokens: #{tokenText1.length})
+    //p   #{tokenText1.join(", ")}
+    br
+    table
+        thead
+            td(style='width: ' + (75) + '%')
+                p KEYWORDS FROM DICT (#{pKeysOrigAndFreq.length})
+        tr
+            td(style='width: ' + (75) + '%' )
+                each item in pKeysOrigAndFreq
+                    li= item[0] + ' (' + item[1] + ')'
+

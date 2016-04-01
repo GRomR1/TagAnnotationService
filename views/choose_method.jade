@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1= title
+    hr
+    p
+        a(class='button', href='/') Назад
+    form(action='/upload')
+        button#myButton(type='submit') Загрузить документ
+    br
+    form(action='/analyze')
+        button#myButton(type='submit') Ввести текст

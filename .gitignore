@@ -34,3 +34,6 @@ node_modules
 
 # IDE Files
 .idea
+
+# Upload files
+etc/files/upload

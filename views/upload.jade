@@ -2,64 +2,21 @@ extends layout
 
 block content
     h1= title
-    - var nameText=title;
-    //a(
-    //class='button',
-    //href='/users'
-    //) +
-    br
-    form(name='form1', method='POST', action='/analyze')
-        //input(name='_method', value='PUT', type='hidden')
-        //input(
-        //  type='checkbox'
-        //  name='checkbox'
-        //  checked
-        //)
-        //textarea(
-        //    name='textarea1'
-        //    value= content2
-        //    cols = "100"
-        //    rows="20"
-        //)
-        p   Text
-        p   #{text1}
-        //input(
-        //  type='input'
-        //  name='nameText'
-        //  value= nameText
-        //)
-        p   TokenizedText (tokens: #{tokenText1.length})
-        p   #{tokenText1.join(", ")}
-        //input(
-        //  type='input'
-        //  name='nameText'
-        //  value= nameText
-        //)
-        br
-        //button(
-        //type='submit'
-        //title='OK'
-        //) OK
-        //each item in pContent
-        //    li= item
-        table
-            thead
-                td(style='width: '+(75)+'%')
-                    p KEYWORDS FROM DICT (#{pKeysOrigAndFreq.length})
-                td
-                    p BASIC STEMS OF KEYWORDS (#{pKeysAndFreq2.length}):
-            tr
-                td(style='width: '+(75)+'%' )
-                    //each item in pKeysOrig
-                    //    li= item
-                    //each val, index in pKeysOrigAndFreq
-                    //        li= index + ' (' + val +')'
-                    each item in pKeysOrigAndFreq
-                        li= item[0] + ' (' + item[1] + ')'
-                td
-                    //each item in pKeys
-                        li= item
-                    each item in pKeysAndFreq2
-                        li= item[0]+' ('+item[1]+')'
-        //p   Tokens
-        //p   #{pContent}
+    hr
+    p
+        a(class='button', href='/choose_method') Назад
+    form(method='post', action='/upload', enctype='multipart/form-data')
+        p Выберите словарь:
+            select(name='selectDictName')
+                each dict in dictNames
+                    option(value='#{dict}') #{dict}
+        //p Для работы загрузите текстовый файл в кодировке utf-8:
+        //input(type='file', name='downloaded_file', multiple='multiple')
+        //br
+        //input(type='submit', style='align:right', value='Upload')
+        p Загрузите анализируемый текстовый документ:
+        input#my_file(type='file', value='', name='downloaded_file', multiple='multiple')
+        div#file_selector Выбрать файл
+        button#myButton(type='submit') Загрузить
+
+    p Всего словарей в системе - #{dictNames.length}

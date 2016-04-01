@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1= title
+    hr
+    p
+        a(class='button', href='/') Назад
+    br
+    if !isDownload
+        p Загрузите файл словаря в кодировке utf-8:
+        form(method='post', action='/upload_dict', enctype='multipart/form-data')
+            input#my_file(type='file', value='', name='downloaded_file', multiple='multiple')
+            div#file_selector Выбрать файл
+            //input#myButton(type='submit' value='Загрузить')
+            button#myButton(type='submit') Загрузить
+    else
+        p Загружено!

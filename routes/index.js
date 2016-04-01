@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var external = require('ExternalTypesAndFunctions');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Tag Annotation Service' });
+  res.render('index', {
+    title: 'Tag Annotation Service' ,
+    dictNames: external.getParsedDictionaryName()
+  });
 });
 
 module.exports = router;
