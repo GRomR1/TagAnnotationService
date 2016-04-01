@@ -1,9 +1,0 @@
-﻿Timeout
-Database
-System
-Memory
-Процессор
-CPU
-ОЗУ
-Память
-Hardware

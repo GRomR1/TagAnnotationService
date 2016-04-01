@@ -66,3 +66,29 @@ a {
   position:relative;
   top:1px;
 }
+
+
+#myLi{
+  /*background: #4aaeea;*/
+  padding:3px;
+  margin :5px;
+  /*color: #1a1a1a;*/
+  font-weight: bold;
+  height: 20px;
+  text-align: right;
+}
+
+.chart div{
+  background: #4aaeea;
+  padding:3px;
+  margin :5px;
+  color: #1a1a1a;
+  font-weight: bold;
+  height: 20px;
+}
+
+/*body{*/
+  /*background: #1a1a1a;*/
+  /*color : #eaeaea;*/
+  /*padding : 10px;*/
+/*}*/

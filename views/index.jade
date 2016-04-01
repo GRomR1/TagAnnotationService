@@ -4,10 +4,13 @@ block content
   h1= title
   hr
   p
-    i Сервис для поиска ключевых слов и выражений в текстах по предметной области "Операционные системы"
+    i Сервис для поиска ключевых слов и выражений в текстах c использованием словарей предметных областей (DD-словарей).
   p
-    i В качестве словаря используется модифицированный алфавитный указатель учебного пособия Таненбаума Э. С. -
-     a(href='http://www.piter.com/collection/starye-tovary/product/sovremennye-operatsionnye-sistemy-2-e-izd') Современные операционные системы. 2-е изд.
+    i
+      != 'В данный момент в систему загружен ' + '<a href="https://dl.dropboxusercontent.com/u/65733625/Study/%D0%9F%D1%80%D0%BE%D1%87%D0%B5%D0%B5/%D0%9A%D0%9C%D0%A3/%D0%9A%D0%9C%D0%A3-2016%20%285%29/%21%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D0%B8/%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B%20%28%D0%A2%D0%B0%D0%BD%D0%B5%D0%BD%D0%B1%D0%B0%D1%83%D0%BC%29.csv">словарь</a>'
+      != ' по Операционным системам, содержащий около 3 тыс. понятий на двух языках.'
+      != ' В его основе лежит модифицированный алфавитный указатель учебного пособия Таненбаума Э. С. - '
+    a(href='http://www.piter.com/collection/starye-tovary/product/sovremennye-operatsionnye-sistemy-2-e-izd') Современные операционные системы. 2-е изд.
   hr
   form(action='/upload_dict')
     button#myButton(type='submit') Загрузить словари
